@@ -1,3 +1,55 @@
+body {
+  font-family: "Nunito", sans-serif;
+  color: #718096;
+  background-color: #ffffff;
+}
 
+.form-layout {
+  width: 30%;
+  border: solid 1px #bbc3cf;
+  padding: 5px 10px;
+}
+
+.t-layout td {
+  border: 1px solid #bbc3cf;
+  width: 150px;
+  text-align: center;
+}
+
+header {
+  height: 80px;
+  background-color: #FA776D;
+  color: #ffff;
+  font-size: 40px;
+  line-height: 80px;
+}
+header .h-inner .main-title {
+  text-align: center;
+}
+
+main .main-inner {
+  width: 90vw;
+  height: auto;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+main .main-inner .search-wrap {
+  padding: 70px 0;
+  width: 50vw;
+  margin: 0 auto;
+  max-width: 810px;
+}
+main .main-inner .search-wrap .form-btn {
+  border: solid 1px #bbc3cf;
+  border-radius: 7px;
+  padding: 8px 14px;
+  margin-left: 12px;
+}
+main .main-inner .size-chart-wrap table {
+  margin: 0 auto;
+}
+main .main-inner .size-chart-wrap table tbody tr td {
+  padding: 8px 10px;
+}
 
 /*# sourceMappingURL=style.css.map */
