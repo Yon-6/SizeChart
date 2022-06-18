@@ -13,10 +13,15 @@ class HomeController extends Controller
      */
     function index()
     {
+        // ブランド一覧を取得
         $bd = new Brand();
         $brands = $bd->getBrand();
 
-        return view('welcome', ['brands' => $brands], ['size_charts' => '']);
+        // 空のサイズ表を取得
+        $scd = new SizeChartDetail();
+        $size_charts = $scd->getSizeChart();
+
+        return view('welcome', ['brands' => $brands], ['size_charts' => $size_charts]);
     }
 
     /**

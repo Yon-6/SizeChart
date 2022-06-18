@@ -21,7 +21,7 @@ class SizeChartDetail extends Model
      *
      * @return array サイズ表
      */
-    function getSizeChart($brand_id)
+    function getSizeChart($brand_id = '')
     {
         return SizeChartDetail::where('size_chart_id', $brand_id)->get();
     }

@@ -38,7 +38,7 @@
                     <!-- ↑↑↑ ここまで検索機能 ↑↑↑ -->
                 </div>
                 <!-- ↓↓↓ ここから検索結果の表示 ↓↓↓ -->
-                @if(!$size_charts == '')
+                @if(!$size_charts->isEmpty())
                     <div class="size-chart-wrap">
                         <table>
                             <tbody>
