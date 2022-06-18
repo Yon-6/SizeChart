@@ -22,113 +22,67 @@
         <main>
             <div class="main-inner">
                 <div class="search-wrap">
-                    <form role="search" method="post" id="searchform" class="searchform" action="">
+                    <!-- ↓↓↓ ここから検索機能 ↓↓↓ -->
+                    <form role="search" method="post" id="searchform" class="searchform" action="/">
                         <div>
-                            <select name="brand" class="form-layout">
-                                <option> ----- </option>'
-                                <option value="1">NIKE</option>
-                                <option value="2">addidas</option>
-                                <option value="3">ラルフローレン</option>
+                            <select name="brand_search" class="form-layout">
+                                <option>ブランド名を選択</option>
+                                @foreach($brands as $brand)
+                                    <option value="{{ $brand['brand_id'] }}">{{ $brand['brand_name'] }}</option>
+                                @endforeach
                             </select>
-                            <input type="search" id="s" name="s" value="" class="form-layout"/>
+                            {{ csrf_field() }}
                             <button type="submit" id="searchsubmit" class="form-btn">検索する</button>
                         </div>
                     </form>
+                    <!-- ↑↑↑ ここまで検索機能 ↑↑↑ -->
                 </div>
-                <div class="size-chart-wrap">
-                    <table>
-                        <tbody>
-                        <tr class="t-layout">
-                            <td>タグ表示サイズ</td>
-                            <td>日本サイズ</td>
-                            <td>年齢</td>
-                            <td>身長</td>
-                            <td>体重</td>
-                            <td>胸囲</td>
-                            <td>ウエスト</td>
-                            <td>ヒップ</td>
-                        </tr>
-                        <tr class="t-layout">
-                            <td>S</td>
-                            <td>S</td>
-                            <td></td>
-                            <td>100cm</td>
-                            <td>30kg</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr class="t-layout">
-                            <td>M</td>
-                            <td>M</td>
-                            <td></td>
-                            <td>130cm</td>
-                            <td>40kg</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr class="t-layout">
-                            <td>L</td>
-                            <td>L</td>
-                            <td></td>
-                            <td>140cm</td>
-                            <td>50kg</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr class="t-layout">
-                            <td>LL</td>
-                            <td>LL</td>
-                            <td></td>
-                            <td>150cm</td>
-                            <td>60kg</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr class="t-layout">
-                            <td>3L</td>
-                            <td>3L</td>
-                            <td></td>
-                            <td>160cm</td>
-                            <td>70kg</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr class="t-layout">
-                            <td>4L</td>
-                            <td>4L</td>
-                            <td></td>
-                            <td>180cm</td>
-                            <td>80kg</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <!-- ↓↓↓ ここから検索結果の表示 ↓↓↓ -->
+                @if(!$size_charts == '')
+                    <div class="size-chart-wrap">
+                        <table>
+                            <tbody>
+                            <tr class="t-layout">
+                                <td>タグ表示サイズ</td>
+                                <td>日本サイズ</td>
+                                <td>年齢</td>
+                                <td>身長</td>
+                                <td>体重</td>
+                                <td>ヘッド</td>
+                                <td>バスト</td>
+                                <td>ウエスト</td>
+                                <td>ヒップ</td>
+                                <td>肩幅</td>
+                                <td>身幅</td>
+                                <td>裄丈(ゆきたけ)</td>
+                                <td>袖丈(そでたけ)</td>
+                                <td>身丈(みたけ)</td>
+                                <td>着丈(きたけ)</td>
+                            </tr>
+                            @foreach($size_charts as $size_chart)
+                                <tr class="t-layout">
+                                    <td>{{ $size_chart['tag_display_size'] }}</td>
+                                    <td>{{ $size_chart['japan_size'] }}</td>
+                                    <td>{{ $size_chart['age'] }}</td>
+                                    <td>{{ $size_chart['height'] }}</td>
+                                    <td>{{ $size_chart['weight'] }}</td>
+                                    <td>{{ $size_chart['head'] }}</td>
+                                    <td>{{ $size_chart['bust'] }}</td>
+                                    <td>{{ $size_chart['waist'] }}</td>
+                                    <td>{{ $size_chart['hip'] }}</td>
+                                    <td>{{ $size_chart['shoulder_length'] }}</td>
+                                    <td>{{ $size_chart['body_width'] }}</td>
+                                    <td>{{ $size_chart['shoulder_and_arm_length'] }}</td>
+                                    <td>{{ $size_chart['sleeve_length'] }}</td>
+                                    <td>{{ $size_chart['total_length'] }}</td>
+                                    <td>{{ $size_chart['body_length'] }}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                @endif
+                <!-- ↑↑↑ ここまで検索結果の表示 ↑↑↑ -->
             </div>
     </main>
     </body>

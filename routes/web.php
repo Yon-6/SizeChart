@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+// TOPページ(検索ページの表示)
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
+// 検索内容のPOST
+Route::post('/', [\App\Http\Controllers\HomeController::class, 'search']);
