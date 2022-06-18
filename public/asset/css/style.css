@@ -63,6 +63,11 @@ main .main-inner .search-wrap form .form-btn:hover {
   background-color: #bbc3cf;
   color: #ffffff;
 }
+main .main-inner .size-chart-wrap .brand-title {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 0 0 30px 30px;
+}
 main .main-inner .size-chart-wrap table {
   margin: 0 auto;
   box-shadow: 3px 5px 10px #c8c8c8;

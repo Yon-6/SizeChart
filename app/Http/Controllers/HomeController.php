@@ -38,6 +38,18 @@ class HomeController extends Controller
         $scd = new SizeChartDetail();
         $size_charts = $scd->getSizeChart($brand_search);
 
-        return view('welcome', ['brands' => $brands], ['size_charts' => $size_charts]);
+        // ブランド検索からブランド名を取得
+        $brand_name = '';
+        foreach ($brands as $brand) {
+            if ($brand['brand_id'] == $brand_search) {
+                $brand_name = $brand['brand_name'];
+            }
+        }
+
+        return view('welcome')->with([
+            'brands' => $brands,
+            'brand_name' => $brand_name,
+            'size_charts' => $size_charts,
+            ]);
     }
 }

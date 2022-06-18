@@ -23,6 +23,6 @@ class SizeChartDetail extends Model
      */
     function getSizeChart($brand_id = '')
     {
-        return SizeChartDetail::where('size_chart_id', $brand_id)->get();
+        return SizeChartDetail::where('brand_id', $brand_id)->get();
     }
 }
