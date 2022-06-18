@@ -1,5 +1,6 @@
 body {
   font-family: "Nunito", sans-serif;
+  font-size: 11px;
   color: #718096;
   background-color: #ffffff;
 }
@@ -8,12 +9,20 @@ body {
   width: 30%;
   border: solid 1px #bbc3cf;
   padding: 5px 10px;
+  text-align: left;
 }
 
 .t-layout td {
   border: 1px solid #bbc3cf;
   width: 150px;
   text-align: center;
+}
+
+.th-layout {
+  background-color: #757575;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
 }
 
 header {
@@ -38,18 +47,30 @@ main .main-inner .search-wrap {
   width: 50vw;
   margin: 0 auto;
   max-width: 810px;
+  text-align: center;
 }
-main .main-inner .search-wrap .form-btn {
+main .main-inner .search-wrap form {
+  font-size: 15px;
+}
+main .main-inner .search-wrap form .form-btn {
   border: solid 1px #bbc3cf;
   border-radius: 7px;
   padding: 8px 14px;
   margin-left: 12px;
+  transition: all 0.3s;
+}
+main .main-inner .search-wrap form .form-btn:hover {
+  background-color: #bbc3cf;
+  color: #ffffff;
 }
 main .main-inner .size-chart-wrap table {
   margin: 0 auto;
+  box-shadow: 3px 5px 10px #c8c8c8;
+  font-size: 15px;
 }
 main .main-inner .size-chart-wrap table tbody tr td {
   padding: 8px 10px;
+  vertical-align: middle;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -42,7 +42,7 @@
                     <div class="size-chart-wrap">
                         <table>
                             <tbody>
-                            <tr class="t-layout">
+                            <tr class="t-layout th-layout">
                                 <td>タグ表示サイズ</td>
                                 <td>日本サイズ</td>
                                 <td>年齢</td>
