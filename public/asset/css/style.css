@@ -43,7 +43,7 @@ main .main-inner {
   margin: 0 auto;
 }
 main .main-inner .search-wrap {
-  padding: 70px 0;
+  padding: 50px 0 30px;
   width: 50vw;
   margin: 0 auto;
   max-width: 810px;
